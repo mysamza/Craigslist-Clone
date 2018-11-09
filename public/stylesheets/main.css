@@ -1,0 +1,33 @@
+﻿/*#postbtn {
+    float: right !important;
+}*/
+
+.borderless {
+    border-top: 0 none;
+}
+
+.custom {
+    color: darkblue;
+    font-family: 'Anton', sans-serif;
+    margin-left:5px;
+}
+
+.smalldate {
+    
+
+
+}
+
+.logoutbutton {
+    color:crimson;
+    font-weight:bold;
+}
+
+.indexka {
+    padding: 0px 10px;
+    font-size: 15px;
+}
+
+.favbuttonclicked {
+    color: darkred;
+}

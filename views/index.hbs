@@ -1,0 +1,59 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+
+            {{#each approvedads }}
+
+            <div class="list-group list-group-flush ">
+
+                <div href="#" class="list-group-item flex-column align-items-start borderless indexka">
+
+                    <div class="d-flex h-15 d-inline-block justify-content-between">
+
+                        {{#gt (moment this.approvaldate diff=moment) -21600000}}
+                        <h6><span class="badge badge-info">New </span></h6>
+                        {{/gt}}
+                        <a href="/posts/{{this._id}}" class="mb-1 custom mr-auto">           {{this.heading}}</a>
+
+                        <small class="navbar-text smalldate text-muted">{{moment this.approvaldate fromNow=null }}</small>
+
+
+                        <!--<small></small>-->
+                    </div>
+
+                    {{#if bookmarked}}
+                    <i class="fas fa-bookmark" style="float:right; font-size:8px;"></i>
+                    {{else}}
+                    <i class="far fa-bookmark " style="float:right;"></i>
+                    {{/if}}
+
+                    <br />
+                    <!--<p class="mb-1"> </p>-->
+                    <!--<small style="font-style:italic">by</small>-->
+                </div>
+
+
+            </div>
+            <br/>
+            {{/each}}
+
+
+        
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+</div>
+
+<script>
+    $('.favbuttonclicked').click(function () {
+        $(this).toggleClass('favbuttonclicked');
+    });
+</script>

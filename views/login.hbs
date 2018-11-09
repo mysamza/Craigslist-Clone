@@ -1,0 +1,110 @@
+<style type="text/css">
+    .login-form {
+        width: 340px;
+        margin: 50px auto;
+    }
+
+        .login-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+
+
+<div class="container">
+    {{#if errnoacc}}
+    <div class="alert alert-warning" role="alert">
+        {{errnoacc}}
+    </div>
+    {{/if}}
+    <div class="login-form">
+        <form onsubmit="return send()" method="post">
+            <a href="/signup"> <b style="float:right; text-decoration:underline">Sign Up</b></a>
+            <h2 class="text-center">Log in</h2>
+            <div class="form-group">
+                <input name="email" id="email" type="text" class="form-control" placeholder="Email" required="required">
+            </div>
+            <div class="form-group">
+                <input name="password" id="password" type="password" class="form-control" placeholder="Password" required="required">
+            </div> {{errpass}}
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </div>
+            <div class="clearfix">
+                <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+                <a href="#" class="pull-right">Forgot Password?</a>
+            </div>
+        </form>
+        <p class="text-center"><a href="/signup">New to Majahourati? <span style="text-decoration:underline;">Sign Up</span></a></p>
+    </div>
+
+</div>
+
+<script>
+    function send() {
+        var url = '/login'
+        var email = $('#email').val();
+        var password = $('#password').val();
+
+        var data = {
+         
+            "email": email,
+            "password": password
+           
+        }
+
+        var callback = function (response) {
+            console.log(response);
+            console.log(respone.res);
+          
+
+        }
+
+        $.post(url, data, callback);
+    }
+
+    //function send() {
+    //    var username = $('#username').val();
+    //    var email = $('#email').val();
+    //    var password = $('#password').val();
+    //    var country = $('country').val();
+
+
+    //    $.ajax({
+    //        type: 'POST',
+    //        url: '/signup',
+    //        dataType: 'json',
+    //        data: {
+
+    //            "username": username,
+    //            "email": email,
+    //            "password": password,
+    //            "country": country
+    //        }
+    //    })
+    //        .done(function (data) {
+    //            console.log('GET response:', JSON.stringify(data, "", 2));
+    //            $('#fromajax').html(JSON.stringify(data, "", 2));
+    //        })
+    //        .fail(function (jqXHR, textStatus, err) {
+    //            console.log('Error respone', textStatus);
+    //        })
+    //};
+
+</script>

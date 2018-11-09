@@ -1,0 +1,248 @@
+
+<FORM onsubmit="send()" method="post" enctype="multipart/form-data">
+    <div class="container">
+
+        <h1 class="text-center">Post Ad to seller community</h1><br>
+
+        <fieldset class="form-group">
+
+            <ul class="list-group">
+
+                <li class="list-group-item">
+                    <small><a href="/files" style="text-decoration: underline; float:right;">How to write an effective Ad</a></small>
+                    <h6>Describe your post</h6><br>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <h4 class="col-sm-2 col-form-label"><i class="fas fa-edit fa-lg"></i> Title</h4>
+                                <div class="col-sm-10">
+                                    <input id="heading" name="heading" type="text" class="form-control" placeholder="Post heading" maxlength="40">
+                                    <small id="passwordHelpInline" class="text-muted" style="font-size: 11px; font-style: italic;">
+                                        *Required
+                                    </small>
+                                    <small id="charcounterheading" class="text-muted" style="font-size: 12px; float:right;">
+                                        40 characters remaining
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <h4 class="col-form-label col-sm-2 pt-0"><i class="far fa-sticky-note fa-lg"></i> Description</h4>
+                                <div class="col-sm-10">
+                                    <textarea id="opdesc" name="opdesc" class="form-control" rows="4" placeholder="Additional description about your order." maxlength="300"></textarea>
+                                    <small class="text-muted" style="font-size: 11px; font-style: italic;">
+                                        *Required
+                                    </small>
+                                    <small id="charcounterdesc" class="text-muted" style="font-size: 12px; float:right;">
+                                        300 characters remaining
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </li>
+                <li class="list-group-item">
+
+                    <h6>Specifications of your order</h6><br>
+                    <div class="form-group row">
+                        <h4 class="col-sm-2 col-form-label"><i class="fas fa-weight fa-lg"></i> Weight</h4>
+                        <div class="col-sm-6">
+                            <div class="input-group-append">
+
+                                <input name="weight" type="number" id="weight" class="form-control" placeholder="Weight" step="0.01">
+
+                                <select class="form-control" id="unit" name="unit">
+                                    <option class="text-muted" value="grams" name="unit">gram(s)</option>
+                                    <option class="text-muted" value="kilos" name="unit">kilo(s)</option>
+                                    <option class="text-muted" value="tons" name="unit">ton(s)</option>
+                                </select>
+
+                            </div>
+                            <small class="text-muted" style="font-size: 11px; font-style: italic;">
+                                *Required
+                            </small>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <h4 class="col-form-label col-sm-2 pt-0"><i class="fab fa-creative-commons-remix fa-lg"></i> Metal</h4>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metal" id="24kradio" value="24 Carat" checked>
+                                <label class="form-check-label" for="24kradio">
+                                    24 Carat
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metal" id="22kradio" value="22 Carat">
+                                <label class="form-check-label" for="22kradio">
+                                    22 Carat
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metal" id="21kradio" value="21 Carat">
+                                <label class="form-check-label" for="21kradio">
+                                    21 Carat
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metal" id="18kradio" value="18 Carat">
+                                <label class="form-check-label" for="18kradio">
+                                    18 Carat
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metal" id="925radio" value="925 Silver">
+                                <label class="form-check-label" for="925radio">
+                                    925 Silver
+                                </label>
+                            </div>
+                            <small class="text-muted" style="font-size: 11px; font-style: italic;">
+                                *Optional
+                            </small>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <h6>When would you like your order to be delivered by?</h6><br>
+
+                    <div class="form-group row">
+                        <h4 class="col-sm-2 col-form-label"><i class="far fa-clock fa-lg"></i> Date</h4>
+                        <div class="col-sm-4">
+                            <input name="date" type="date" id="date" class="form-control">
+                            <small class="text-muted" style="font-size: 11px; font-style: italic;">
+                                *Optional
+                            </small>
+                        </div>
+                         
+                    </div>
+
+
+                </li>
+
+                <li class="list-group-item">
+                    <h6>Attach sample images </h6><br>
+
+                                                  <div class="form-group">
+
+                                                      <input id="file-input" type="file" name="img_" multiple>
+                                                      <div id="preview"></div>
+
+                                                  </div>
+
+
+                </li>
+                <li class="list-group-item">
+
+                    <button type="submit" class="btn btn-light float-right"> Submit </button>
+
+
+
+
+
+                </li>
+            </ul>
+
+
+
+        </fieldset>
+
+
+
+    </div>
+</FORM>
+
+
+<script>
+
+    function send() {
+        var url = 'localhost:3000/adreqform'
+
+        var heading = $('#heading').val();
+        var date = $('#date').val();
+        var metal = $('input[name="metal"]:checked').val(); //$('#metal').val();
+        var opdesc = $('#opdesc').val();
+        var weight = $('#weight').val();
+        var unit = $("#unit").children("option").filter(":selected").text()
+   
+    
+        var data = {
+
+            "heading": heading,
+            "opdesc": opdesc,
+            "weight": weight,
+            "metal": metal,
+            "unit": unit,
+            "date": date
+
+        }
+   
+        $.post(url, data);
+
+    }
+
+    var headingdiv = document.getElementById('heading');
+    var charcounterheading = document.getElementById('charcounterheading');
+    var maxcountheading = 40;
+
+    headingdiv.addEventListener('input', () => {
+        var remaining = maxcountheading - headingdiv.value.length;
+     
+        charcounterheading.textContent = `${remaining} characters remaining`;
+      
+
+    });
+
+    var descdiv = document.getElementById('opdesc');
+    var charcounterdesc = document.getElementById('charcounterdesc');
+    var maxcountdesc = 300;
+
+    descdiv.addEventListener('input', () => {
+        var remaining = maxcountdesc - descdiv.value.length;
+       
+
+        charcounterdesc.textContent = `${remaining} characters remaining`;
+       
+    });
+
+    function previewImages() {
+
+        var $preview = $('#preview').empty();
+        if (this.files) $.each(this.files, readAndPreview);
+
+        function readAndPreview(i, file) {
+
+            if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                return alert(file.name + " is not an image");
+            } // else...
+
+            var reader = new FileReader();
+
+            $(reader).on("load", function () {
+                $preview.append($("<img/>", { src: this.result, height: 100 }));
+            });
+
+            reader.readAsDataURL(file);
+
+        }
+
+    }
+
+    $('#file-input').on("change", previewImages);
+
+</script>
+

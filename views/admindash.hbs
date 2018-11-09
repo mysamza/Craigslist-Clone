@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+        <h4>Ads to approve</h4>
+
+
+    </div><br />
+    <div class="row">
+
+        {{#each ads}}
+        <div href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+
+            <div class="row">
+
+                <div class="col-3">
+                    <small>{{this.creationdate}}</small>
+                </div>
+                <div class="col-9">
+                    <h6>{{this.heading}}</h6>
+                    <small>{{this.opdesc}}</small>
+                    <button type="button" style="font-size: 10px;" class="btn btn-outline-secondary">Metal {{this.metal}} </button><br /><br />
+                    <button type="button" style="font-size: 10px;" class="btn btn-outline-secondary">Weight {{this.weight}} {{this.unit}} </button><br /><br />
+                    <button type="button" style="font-size: 10px;" class="btn btn-outline-secondary">Deliver By {{this.deliverydate}} </button><br /><br />
+                    <small class="text-muted">Posted by: {{this.username}}</small>
+                </div>
+                <div class="col-2">
+                    <br />
+                    {{#if (eq this.adstatus "unapproved")}}
+                    <form>
+                        <a href="/admindash/approvepost/{{this._id}}" class="btn btn-success" onclick="myFunction()">Approve</a>
+                    </form>
+                        {{else}}
+                    <a href="/admindash/unapprovepost/{{this._id}}" class="btn btn-warning">Unapprove</a>
+                    
+                    {{/if}}
+                </div>
+
+            </div>
+
+        </div> <!--these are your items-->
+        {{/each}}
+
+    </div>
+</div>
+
+
+<script>
+    $(window).scroll(function () {
+        sessionStorage.scrollTop = $(this).scrollTop();
+    });
+
+    $(document).ready(function () {
+        if (sessionStorage.scrollTop != "undefined") {
+            $(window).scrollTop(sessionStorage.scrollTop);
+        }
+    });
+
+    function myFunction() {
+        $("form").submit();
+    }
+
+</script>

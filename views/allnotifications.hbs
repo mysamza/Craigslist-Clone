@@ -1,0 +1,26 @@
+<div class="container"><br />
+    <div class="col-12">
+        <div class="card">
+            <h5 class="card-header">Featured</h5>
+            <div class="card-body">
+                
+                <div class="list-group">
+                    <div href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">List group item heading</h6>
+
+                        </div>
+                        <small class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</small>
+                        {{#if read}}
+                        <button style="float:right; font-size:11px;" type="button" class="btn btn-light text-muted">Mark as Unread</button>
+                        {{#else}}
+                        <button style="float:right; font-size:11px;" type="button" class="btn btn-light text-muted">Mark as Read</button>
+                        {{/if}}
+                        <div class="text-muted" style="font-size:12px;">3 days ago</div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
