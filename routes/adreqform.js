@@ -32,7 +32,11 @@ router.get('/', function (req, res) {
 });
 
 
-router.post('/', upload.array('img_', 2), function (req, res) {
+router.post('/', upload.array('img_', 1), function (req, res) {
+
+    console.log(req.file)
+    console.log(req.files)
+    
 
     //for (var i = 0; i < 3; i++) {
 

@@ -1,5 +1,5 @@
 
-<FORM onsubmit="send()" method="post" enctype="multipart/form-data">
+<FORM   method="post" enctype="multipart/form-data">
     <div class="container">
 
         <h1 class="text-center">Post Ad to seller community</h1><br>
@@ -148,8 +148,10 @@
                 </li>
                 <li class="list-group-item">
 
-                    <button type="submit" class="btn btn-light float-right"> Submit </button>
-
+                    <button type="submit" value="submit"class="btn btn-light float-right"> Submit </button>
+    <!--<button type="submit" value="save" class="btn btn-light float-right"> Save </button>-->
+                    <!--<button id="button_1" value="save" name="but1">Save</button>
+                    <button id="button_2" value="submit" name="but2">Submit</button>-->
 
 
 
@@ -169,31 +171,57 @@
 
 <script>
 
-    function send() {
-        var url = 'localhost:3000/adreqform'
+    $("button").click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "/adreqform",
+            data: {
+                savestatus: $(this).val(), // < note use of 'this' here
+                heading: $('#heading').val(),
+                opdesc: $('#opdesc').val(),
+                weight: $('#weight').val(),
+                metal: $('input[name="metal"]:checked').val(),
+                unit: $("#unit").children("option").filter(":selected").text(),
+                date: $('#date').val()
+            },
+            success: function (result) {
+               alert(result.response)
+            },
+            error: function (result) {
+               
+            }
+        });
 
-        var heading = $('#heading').val();
-        var date = $('#date').val();
-        var metal = $('input[name="metal"]:checked').val(); //$('#metal').val();
-        var opdesc = $('#opdesc').val();
-        var weight = $('#weight').val();
-        var unit = $("#unit").children("option").filter(":selected").text()
-   
+
+    });
+
+    //function send() {
+    //    var url = 'localhost:3000/adreqform'
+
+    //    var heading = $('#heading').val();
+    //    var date = $('#date').val();
+    //    var metal = $('input[name="metal"]:checked').val(); //$('#metal').val();
+    //    var opdesc = $('#opdesc').val();
+    //    var weight = $('#weight').val();
+    //    var unit = $("#unit").children("option").filter(":selected").text()
+    //    var savedstatus = $('button').val();
     
-        var data = {
+    //    var data = {
 
-            "heading": heading,
-            "opdesc": opdesc,
-            "weight": weight,
-            "metal": metal,
-            "unit": unit,
-            "date": date
+    //        "heading": heading,
+    //        "opdesc": opdesc,
+    //        "weight": weight,
+    //        "metal": metal,
+    //        "unit": unit,
+    //        "date": date,
+    //        "test": "This is probably coming for jquery"
 
-        }
+    //    }
    
-        $.post(url, data);
+    //    $.post(url, data);
 
-    }
+    //}
 
     var headingdiv = document.getElementById('heading');
     var charcounterheading = document.getElementById('charcounterheading');

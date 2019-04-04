@@ -1,0 +1,3 @@
+C:\Users\mesam\source\repos\JewelryMP\JewelryMP\obj\Debug\JewelryMP.njsprojResolveAssemblyReference.cache
+C:\Users\mesam\source\repos\JewelryMP\JewelryMP\obj\Debug\JewelryMP.njsproj.CoreCompileInputs.cache
+C:\Users\mesam\source\repos\JewelryMP\JewelryMP\bin\Microsoft.NodejsTools.WebRole.dll

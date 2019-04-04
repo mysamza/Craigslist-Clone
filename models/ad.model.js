@@ -18,6 +18,7 @@ var AdSchema = new Schema({
     username: String,
     adstatus: { type: String, default: "unapproved" },
     approvaldate: Date,
+    savestatus: String, //"saved" or "posted".
     imgdest: [{type: String, default: "Null"}]
 });
 
